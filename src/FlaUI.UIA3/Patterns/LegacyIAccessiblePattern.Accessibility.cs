@@ -1,10 +1,12 @@
 ﻿#if NETFRAMEWORK
 using Accessibility;
 using FlaUI.Core.Tools;
+using FlaUI.Core.Patterns;
+using UIA = Interop.UIAutomationClient;
 
 namespace FlaUI.UIA3.Patterns
 {
-    public partial class LegacyIAccessiblePattern
+    public partial class LegacyIAccessiblePattern : LegacyIAccessiblePatternBase<UIA.IUIAutomationLegacyIAccessiblePattern>
     {
         public override IAccessible GetIAccessible()
         {
