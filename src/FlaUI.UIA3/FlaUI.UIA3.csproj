@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup Label="Build">
-    <TargetFramework>net48</TargetFramework>
+    <TargetFramework>net45</TargetFramework>
     <UseWPF>true</UseWPF>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
@@ -36,6 +36,10 @@
   <ItemGroup Label="Project References">
     <ProjectReference Include="..\FlaUI.Core\FlaUI.Core.csproj" />
   </ItemGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' != 'netstandard2.0' And '$(TargetFramework)' != 'netcoreapp3.1' And '$(TargetFramework)' != 'net5.0-windows'">
     <Reference Include="Accessibility" />
